@@ -23,7 +23,6 @@ namespace ConsoleApp1
         {
             public void ActOnNotification(string message)
             {
-                // zapisywanie logów do pliku dziennika
                 Console.WriteLine("Log IoC: " + message);
             }
         }
@@ -32,7 +31,6 @@ namespace ConsoleApp1
         {
             public void ActOnNotification(string message)
             {
-                // wysyłanie adresu email do administratora
                 Console.WriteLine("EmailSenderIoC: " + message);
             }
         }
@@ -40,7 +38,6 @@ namespace ConsoleApp1
         {
             public void ActOnNotification(string message)
             {
-                // wysyłanie wiadomości sms do administratora
                 Console.WriteLine("SMSSenderIoC: " + message);
             }
         }

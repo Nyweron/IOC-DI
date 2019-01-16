@@ -6,32 +6,30 @@ namespace ConsoleApp1
     {
         public class IISAppPoolWatcher
         {
-            EventLogWriter writer = null;
-            EventSendEmail sm = null;
+            EventLogWriterWithoutIoc writer = null;
+            EventSendEmailWithoutIoc sm = null;
             public void Notify(string message)
             {
-                writer = new EventLogWriter();
+                writer = new EventLogWriterWithoutIoc();
                 writer.Write(message);
 
-                sm = new EventSendEmail();
+                sm = new EventSendEmailWithoutIoc();
                 sm.SendMail(message);
             }
         }
 
-        class EventLogWriter
+        class EventLogWriterWithoutIoc
         {
             public void Write(string message)
             {
-                // zapisywanie logów do pliku dziennika
                 Console.WriteLine("Log: " + message);
             }
         }
 
-        class EventSendEmail
+        class EventSendEmailWithoutIoc
         {
             public void SendMail(string message)
             {
-                //wyslij email
                 Console.WriteLine("EmailSender: " + message);
             }
         }
