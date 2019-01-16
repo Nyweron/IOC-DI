@@ -19,6 +19,7 @@ namespace ConsoleApp1
                 action.ActOnNotification(message);
             }
         }
+
         class EventLogWriterIoC : INotificationAction
         {
             public void ActOnNotification(string message)
@@ -34,6 +35,7 @@ namespace ConsoleApp1
                 Console.WriteLine("EmailSenderIoC: " + message);
             }
         }
+
         class SMSSenderIoC : INotificationAction
         {
             public void ActOnNotification(string message)
